@@ -1,0 +1,321 @@
+﻿  printCGF.cpp
+d:\cygwin64\usr\include\sys\_types.h(31): error C2144: syntax error : '__int64' should be preceded by ';'
+d:\cygwin64\usr\include\sys\_types.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\cygwin64\usr\include\sys\_types.h(78): error C4980: '__value' : use of this keyword requires /clr:oldSyntax command line option
+d:\cygwin64\usr\include\sys\_types.h(78): error C2059: syntax error : '__value'
+d:\cygwin64\usr\include\sys\reent.h(195): error C2061: syntax error : identifier '_read'
+d:\cygwin64\usr\include\sys\reent.h(197): error C2061: syntax error : identifier '_write'
+d:\cygwin64\usr\include\sys\reent.h(199): error C2535: 'int __sFILE::_EXFNPTR(void)' : member function already defined or declared
+          d:\cygwin64\usr\include\sys\reent.h(195) : see declaration of '__sFILE::_EXFNPTR'
+d:\cygwin64\usr\include\sys\reent.h(200): error C2061: syntax error : identifier '_seek'
+d:\cygwin64\usr\include\sys\reent.h(200): error C2556: '_fpos_t __sFILE::_EXFNPTR(void)' : overloaded function differs only by return type from 'int __sFILE::_EXFNPTR(void)'
+          d:\cygwin64\usr\include\sys\reent.h(195) : see declaration of '__sFILE::_EXFNPTR'
+d:\cygwin64\usr\include\sys\reent.h(200): error C2371: '__sFILE::_EXFNPTR' : redefinition; different basic types
+          d:\cygwin64\usr\include\sys\reent.h(195) : see declaration of '__sFILE::_EXFNPTR'
+d:\cygwin64\usr\include\sys\reent.h(201): error C2061: syntax error : identifier '_close'
+d:\cygwin64\usr\include\sys\reent.h(586): error C2061: syntax error : identifier '__cleanup'
+d:\cygwin64\usr\include\sys\reent.h(607): error C2144: syntax error : 'unsigned __int64' should be preceded by ';'
+d:\cygwin64\usr\include\sys\reent.h(607): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(75): error C2733: 'pow' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(133) : see declaration of 'pow'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(91): error C2733: 'acos' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(124) : see declaration of 'acos'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(92): error C2733: 'asin' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(125) : see declaration of 'asin'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(93): error C2733: 'atan' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(108) : see declaration of 'atan'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(94): error C2733: 'atan2' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(126) : see declaration of 'atan2'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(95): error C2733: 'ceil' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(115) : see declaration of 'ceil'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(96): error C2733: 'cos' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(109) : see declaration of 'cos'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(97): error C2733: 'cosh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(127) : see declaration of 'cosh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(98): error C2733: 'exp' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(129) : see declaration of 'exp'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(100): error C2733: 'floor' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(117) : see declaration of 'floor'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(101): error C2733: 'fmod' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(135) : see declaration of 'fmod'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(102): error C2733: 'frexp' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(113) : see declaration of 'frexp'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(103): error C2733: 'ldexp' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(130) : see declaration of 'ldexp'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(104): error C2733: 'log' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(131) : see declaration of 'log'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(105): error C2733: 'log10' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(132) : see declaration of 'log10'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(108): error C2733: 'sin' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(110) : see declaration of 'sin'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(109): error C2733: 'sinh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(128) : see declaration of 'sinh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(110): error C2733: 'sqrt' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(134) : see declaration of 'sqrt'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(111): error C2733: 'tan' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(111) : see declaration of 'tan'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(112): error C2733: 'tanh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(112) : see declaration of 'tanh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(126): error C2660: 'fmaf' : function does not take 3 arguments
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(131): error C2660: 'fma' : function does not take 3 arguments
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(136): error C2039: 'fmal' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(136): error C3861: 'fmal': identifier not found
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(154): error C2660: 'remquof' : function does not take 3 arguments
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(159): error C2660: 'remquo' : function does not take 3 arguments
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(164): error C2039: 'remquol' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(164): error C3861: 'remquol': identifier not found
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(176): error C2733: 'acosh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(293) : see declaration of 'acosh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(177): error C2733: 'asinh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(265) : see declaration of 'asinh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(178): error C2733: 'atanh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(294) : see declaration of 'atanh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(179): error C2733: 'cbrt' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(266) : see declaration of 'cbrt'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(180): error C2733: 'copysign' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(261) : see declaration of 'copysign'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(181): error C2733: 'erf' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(298) : see declaration of 'erf'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(182): error C2733: 'erfc' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(299) : see declaration of 'erfc'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(183): error C2733: 'expm1' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(289) : see declaration of 'expm1'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(184): error C2733: 'exp2' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(271) : see declaration of 'exp2'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(186): error C2733: 'fdim' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(282) : see declaration of 'fdim'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(188): error C2733: 'fmax' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(283) : see declaration of 'fmax'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(189): error C2733: 'fmin' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(284) : see declaration of 'fmin'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(190): error C2733: 'hypot' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(306) : see declaration of 'hypot'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(191): error C2733: 'ilogb' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(263) : see declaration of 'ilogb'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(192): error C2733: 'lgamma' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(297) : see declaration of 'lgamma'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(193): error C2733: 'llrint' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(276) : see declaration of 'llrint'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(194): error C2733: 'llround' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(279) : see declaration of 'llround'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(195): error C2733: 'log1p' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(288) : see declaration of 'log1p'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(196): error C2733: 'log2' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(300) : see declaration of 'log2'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(197): error C2733: 'logb' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(262) : see declaration of 'logb'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(198): error C2733: 'lrint' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(275) : see declaration of 'lrint'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(199): error C2733: 'lround' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(278) : see declaration of 'lround'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(200): error C2733: 'nearbyint' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(274) : see declaration of 'nearbyint'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(201): error C2733: 'nextafter' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(267) : see declaration of 'nextafter'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(203): error C2733: 'remainder' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(295) : see declaration of 'remainder'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(205): error C2733: 'rint' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(268) : see declaration of 'rint'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(206): error C2733: 'round' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(277) : see declaration of 'round'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(207): error C2733: 'scalbln' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(272) : see declaration of 'scalbln'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(208): error C2733: 'scalbn' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(269) : see declaration of 'scalbn'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(209): error C2733: 'tgamma' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(273) : see declaration of 'tgamma'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(210): error C2733: 'trunc' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(280) : see declaration of 'trunc'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(23): error C2039: 'abs' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(23): error C2873: 'abs' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(41): error C2039: 'acosl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(41): error C2873: 'acosl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(41): error C2039: 'asinl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(41): error C2873: 'asinl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2039: 'atanl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2873: 'atanl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2039: 'atan2l' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2873: 'atan2l' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2039: 'ceill' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2873: 'ceill' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2039: 'cosl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2873: 'cosl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2039: 'coshl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2873: 'coshl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2039: 'expl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2873: 'expl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2039: 'fabsl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2873: 'fabsl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2039: 'floorl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2873: 'floorl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2039: 'fmodl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2873: 'fmodl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2039: 'frexpl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2873: 'frexpl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2039: 'ldexpl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2873: 'ldexpl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2039: 'logl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2873: 'logl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(46): error C2039: 'log10l' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(46): fatal error C1003: error count exceeds 100; stopping compilation
+  Hello.cpp
+d:\cygwin64\usr\include\sys\_types.h(31): error C2144: syntax error : '__int64' should be preceded by ';'
+d:\cygwin64\usr\include\sys\_types.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\cygwin64\usr\include\sys\_types.h(78): error C4980: '__value' : use of this keyword requires /clr:oldSyntax command line option
+d:\cygwin64\usr\include\sys\_types.h(78): error C2059: syntax error : '__value'
+d:\cygwin64\usr\include\sys\reent.h(195): error C2061: syntax error : identifier '_read'
+d:\cygwin64\usr\include\sys\reent.h(197): error C2061: syntax error : identifier '_write'
+d:\cygwin64\usr\include\sys\reent.h(199): error C2535: 'int __sFILE::_EXFNPTR(void)' : member function already defined or declared
+          d:\cygwin64\usr\include\sys\reent.h(195) : see declaration of '__sFILE::_EXFNPTR'
+d:\cygwin64\usr\include\sys\reent.h(200): error C2061: syntax error : identifier '_seek'
+d:\cygwin64\usr\include\sys\reent.h(200): error C2556: '_fpos_t __sFILE::_EXFNPTR(void)' : overloaded function differs only by return type from 'int __sFILE::_EXFNPTR(void)'
+          d:\cygwin64\usr\include\sys\reent.h(195) : see declaration of '__sFILE::_EXFNPTR'
+d:\cygwin64\usr\include\sys\reent.h(200): error C2371: '__sFILE::_EXFNPTR' : redefinition; different basic types
+          d:\cygwin64\usr\include\sys\reent.h(195) : see declaration of '__sFILE::_EXFNPTR'
+d:\cygwin64\usr\include\sys\reent.h(201): error C2061: syntax error : identifier '_close'
+d:\cygwin64\usr\include\sys\reent.h(586): error C2061: syntax error : identifier '__cleanup'
+d:\cygwin64\usr\include\sys\reent.h(607): error C2144: syntax error : 'unsigned __int64' should be preceded by ';'
+d:\cygwin64\usr\include\sys\reent.h(607): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(75): error C2733: 'pow' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(133) : see declaration of 'pow'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(91): error C2733: 'acos' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(124) : see declaration of 'acos'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(92): error C2733: 'asin' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(125) : see declaration of 'asin'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(93): error C2733: 'atan' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(108) : see declaration of 'atan'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(94): error C2733: 'atan2' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(126) : see declaration of 'atan2'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(95): error C2733: 'ceil' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(115) : see declaration of 'ceil'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(96): error C2733: 'cos' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(109) : see declaration of 'cos'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(97): error C2733: 'cosh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(127) : see declaration of 'cosh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(98): error C2733: 'exp' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(129) : see declaration of 'exp'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(100): error C2733: 'floor' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(117) : see declaration of 'floor'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(101): error C2733: 'fmod' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(135) : see declaration of 'fmod'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(102): error C2733: 'frexp' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(113) : see declaration of 'frexp'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(103): error C2733: 'ldexp' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(130) : see declaration of 'ldexp'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(104): error C2733: 'log' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(131) : see declaration of 'log'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(105): error C2733: 'log10' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(132) : see declaration of 'log10'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(108): error C2733: 'sin' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(110) : see declaration of 'sin'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(109): error C2733: 'sinh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(128) : see declaration of 'sinh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(110): error C2733: 'sqrt' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(134) : see declaration of 'sqrt'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(111): error C2733: 'tan' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(111) : see declaration of 'tan'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(112): error C2733: 'tanh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(112) : see declaration of 'tanh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(126): error C2660: 'fmaf' : function does not take 3 arguments
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(131): error C2660: 'fma' : function does not take 3 arguments
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(136): error C2039: 'fmal' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(136): error C3861: 'fmal': identifier not found
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(154): error C2660: 'remquof' : function does not take 3 arguments
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(159): error C2660: 'remquo' : function does not take 3 arguments
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(164): error C2039: 'remquol' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(164): error C3861: 'remquol': identifier not found
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(176): error C2733: 'acosh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(293) : see declaration of 'acosh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(177): error C2733: 'asinh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(265) : see declaration of 'asinh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(178): error C2733: 'atanh' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(294) : see declaration of 'atanh'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(179): error C2733: 'cbrt' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(266) : see declaration of 'cbrt'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(180): error C2733: 'copysign' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(261) : see declaration of 'copysign'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(181): error C2733: 'erf' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(298) : see declaration of 'erf'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(182): error C2733: 'erfc' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(299) : see declaration of 'erfc'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(183): error C2733: 'expm1' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(289) : see declaration of 'expm1'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(184): error C2733: 'exp2' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(271) : see declaration of 'exp2'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(186): error C2733: 'fdim' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(282) : see declaration of 'fdim'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(188): error C2733: 'fmax' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(283) : see declaration of 'fmax'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(189): error C2733: 'fmin' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(284) : see declaration of 'fmin'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(190): error C2733: 'hypot' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(306) : see declaration of 'hypot'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(191): error C2733: 'ilogb' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(263) : see declaration of 'ilogb'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(192): error C2733: 'lgamma' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(297) : see declaration of 'lgamma'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(193): error C2733: 'llrint' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(276) : see declaration of 'llrint'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(194): error C2733: 'llround' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(279) : see declaration of 'llround'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(195): error C2733: 'log1p' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(288) : see declaration of 'log1p'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(196): error C2733: 'log2' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(300) : see declaration of 'log2'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(197): error C2733: 'logb' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(262) : see declaration of 'logb'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(198): error C2733: 'lrint' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(275) : see declaration of 'lrint'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(199): error C2733: 'lround' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(278) : see declaration of 'lround'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(200): error C2733: 'nearbyint' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(274) : see declaration of 'nearbyint'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(201): error C2733: 'nextafter' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(267) : see declaration of 'nextafter'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(203): error C2733: 'remainder' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(295) : see declaration of 'remainder'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(205): error C2733: 'rint' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(268) : see declaration of 'rint'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(206): error C2733: 'round' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(277) : see declaration of 'round'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(207): error C2733: 'scalbln' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(272) : see declaration of 'scalbln'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(208): error C2733: 'scalbn' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(269) : see declaration of 'scalbn'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(209): error C2733: 'tgamma' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(273) : see declaration of 'tgamma'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\xtgmath.h(210): error C2733: 'trunc' : second C linkage of overloaded function not allowed
+          d:\cygwin64\usr\include\math.h(280) : see declaration of 'trunc'
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(23): error C2039: 'abs' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(23): error C2873: 'abs' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(41): error C2039: 'acosl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(41): error C2873: 'acosl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(41): error C2039: 'asinl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(41): error C2873: 'asinl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2039: 'atanl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2873: 'atanl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2039: 'atan2l' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2873: 'atan2l' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2039: 'ceill' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(42): error C2873: 'ceill' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2039: 'cosl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2873: 'cosl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2039: 'coshl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2873: 'coshl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2039: 'expl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(43): error C2873: 'expl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2039: 'fabsl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2873: 'fabsl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2039: 'floorl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2873: 'floorl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2039: 'fmodl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(44): error C2873: 'fmodl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2039: 'frexpl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2873: 'frexpl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2039: 'ldexpl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2873: 'ldexpl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2039: 'logl' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(45): error C2873: 'logl' : symbol cannot be used in a using-declaration
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(46): error C2039: 'log10l' : is not a member of '`global namespace''
+c:\program files (x86)\microsoft visual studio 12.0\vc\include\cmath(46): fatal error C1003: error count exceeds 100; stopping compilation
+  Generating Code...
