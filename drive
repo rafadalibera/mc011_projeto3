@@ -1,0 +1,64 @@
+#!/bin/bash
+#
+# [p3] é o diretório em que seus códigos de otimização devem ficar
+# Cada otimização deve ter um .cpp próprio 
+# 
+# [Release] é o diretório que ficará a biblioteca compilada (.so) da sua otimização
+#
+# [tests] é o diretório que contém arquivo em LLVM-IR para os testes
+#
+#==  Comandos ==
+#
+# Para compilar suas otimizações presentes em p3
+# $ ./drive compile
+#
+# Para limpar
+# $ ./drive clean
+#
+# Para utilizar a otimizacao que está em p3/Hello.cpp no arquivo LLVM-IR tests/QuickSort.ll
+# $ ./drive opt -hello tests/QuickSort.ll > tests/QuickSort.opt
+#
+# ou diretamente via "opt"
+# $ opt -load Release/P3.so -hello tests/QuickSort.ll > tests/QuickSort.opt
+#
+# O resultado QuickSort.opt está em LLVM bytecode, que é um LLVM-IR compilado. 
+# A entrada de 'opt' pode ser tanto LLVM-IR (.ll) quanto LLVM bytecode (.bc)
+#
+# Desmontando LLVM bytecode em LLVM-IR (ASCII)
+# $ llvm-dis QuickSort.opt
+#
+# Montando arquivos LLVM-IR (ASCII) em LLVM bytecode
+# $ llvm-as input.ll -o output.bc
+#
+# Compilando arquivos .c para LLVM-IR (ASCII)
+# $ clang -emit-llvm -S input.c -o output.ll
+#
+# Compilando arquivos .c para LLVM-IR bytecode
+# $ clang -emit-llvm -c input.c -o output.bc
+
+
+case $1 in
+
+compile)
+	make
+;;
+
+opt)
+	opt -load ./Release/P3.so $2 $3
+;;
+
+install)
+	echo "Aviso: A instação não é necessária nesta versão do pacote."
+;;
+
+clean)
+	make clean
+;;
+
+*)
+	echo "Erro: Comando não encontrado"
+;;
+esac
+
+
+
