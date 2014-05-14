@@ -1,4 +1,4 @@
-LLVM_CONFIG?=llvm-config
+LLVM_CONFIG?=/usr/local/Cellar/llvm33/3.3/bin/llvm-config-3.3
 
 SRC_DIR=./p3
 PASS_SO=Release/P3.so
