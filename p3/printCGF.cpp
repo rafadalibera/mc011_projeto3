@@ -39,6 +39,11 @@ namespace {
 		std::set<Instruction*> before;
 		std::set<Instruction*> after;
 	};
+
+	void computeBBGenKill(Function &F, DenseMap<BasicBlock *, genKill> &bbMap){
+		
+	}
+
 }
 char printCFG::ID = 0;
 static RegisterPass<printCFG> X("printCFG", "Print CFG Pass", false, false);
