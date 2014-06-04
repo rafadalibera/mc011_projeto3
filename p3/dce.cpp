@@ -18,26 +18,6 @@
 using namespace llvm;
 
 namespace {
-	struct Hello : public FunctionPass {
-		static char ID;
-		Hello() : FunctionPass(ID) {}
-
-		virtual bool runOnFunction(Function &F) {
-			errs() << "Hello: ";
-			errs() << F.getName() << '\n';
-			return false;
-		}
-
-		virtual bool teste(){
-			Instruction * I;
-			for (Instruction::op_iterator o = I->op_begin, oe = I->op_end; o != oe; ++o){
-				Value * v = *o;
-				if (isa<Instruction>(*v) || isa<Argument>(*v)){
-					I->mayHaveSideEffects();
-				}
-			}
-		}
-	};
 	class genKill {
 	public:
 		std::set<Instruction*> gen;
@@ -58,9 +38,11 @@ namespace {
 	public:
 		std::list<Use *> In;
 		std::list<Use *> Out;
-		Use * kill;
+		Instruction * kill;
 		Instruction * inst;
 	};
+
+
 
 	void computeBBGenKill(Function &F, std::list<BasicBlockInfo> &basicBlocksList)
 	{
@@ -98,44 +80,44 @@ namespace {
 
 	std::list<Instruction *> FazerUniao(std::list<Instruction *> l1, std::list<Instruction *> l2){
 		std::list<Instruction *> retorno;
-		for each (Instruction * del1 in l1)
+		for (std::list<Instruction *>::iterator del1 = l1.begin(); del1 != l1.end(); ++del1)
 		{
 			bool teste = false;
-			for each (Instruction * del2 in l2)
+			for (std::list<Instruction *>::iterator del2 = l2.begin(); del2 != l2.end(); ++del2)
 			{
-				if (del2->getValueID() == del1->getValueID()){
+				if ((*del2)->getValueID() == (*del1)->getValueID()){
 					teste = true;
 				}
 			}
 			if (!teste){
-				retorno.push_back(del1);
+				retorno.push_back((*del1));
 			}
 		}
-		for each (Instruction * del2 in l2)
+		for (std::list<Instruction *>::iterator del2 = l2.begin(); del2 != l2.end(); ++del2)
 		{
-			retorno.push_back(del2);
+			retorno.push_back((*del2));
 		}
 		return retorno;
 	}
 
 	std::list<Use *> FazerUniao(std::list<Use *> l1, std::list<Use *> l2){
 		std::list<Use *> retorno;
-		for each (Use * del1 in l1)
+		for (std::list<Use *>::iterator del1 = l1.begin(); del1 != l1.end(); ++del1)
 		{
 			bool teste = false;
-			for each (Use * del2 in l2)
+			for (std::list<Use *>::iterator del2 = l2.begin(); del2 != l2.end(); ++del2)
 			{
-				if (del2->getUser()->getValueID() == del1->getUser()->getValueID()){
+				if ((*del2)->getUser()->getValueID() == (*del1)->getUser()->getValueID()){
 					teste = true;
 				}
 			}
 			if (!teste){
-				retorno.push_back(del1);
+				retorno.push_back((*del1));
 			}
 		}
-		for each (Use * del2 in l2)
+		for (std::list<Use *>::iterator del2 = l2.begin(); del2 != l2.end(); ++del2)
 		{
-			retorno.push_back(del2);
+			retorno.push_back((*del2));
 		}
 		return retorno;
 	}
@@ -143,58 +125,59 @@ namespace {
 	std::list<Instruction *> SubtracaoConjunto(std::list<Instruction *> in, std::list<Instruction *>kill){
 		std::list<Instruction *> retorno;
 
-		for each (Instruction * var1 in in)
+		for (std::list<Instruction *>::iterator var1 = in.begin(); var1 != in.end(); ++var1)
 		{
 			bool teste = false;
-			for each (Instruction * var2 in kill)
+			for (std::list<Instruction *>::iterator var2 = kill.begin(); var2 != kill.end(); ++var2)
 			{
-				if (var2->getValueID() == var1->getValueID()){
+				if ((*var2)->getValueID() == (*var1)->getValueID()){
 					teste = true;
 				}
 			}
 			if (!teste){
-				retorno.push_back(var1);
+				retorno.push_back((*var1));
 			}
 		}
 		return retorno;
 	}
 
-	std::list<Use *> SubtracaoConjunto(std::list<Use *> in, std::list<Use *>kill){
+	std::list<Use *> SubtracaoConjunto(std::list<Use *> in, std::list<Instruction *>kill){
 		std::list<Use *> retorno;
 
-		for each (Use * var1 in in)
+		for (std::list<Use *>::iterator var1 = in.begin(); var1 != in.end(); ++var1)
 		{
 			bool teste = false;
-			for each (Use * var2 in kill)
+			for (std::list<Instruction *>::iterator var2 = kill.begin(); var2 != kill.end(); ++var2)
 			{
-				if (var2->getUser()->getValueID() == var1->getUser()->getValueID()){
+				if ((*var2)->getValueID() == (*var1)->getUser()->getValueID()){
 					teste = true;
 				}
 			}
 			if (!teste){
-				retorno.push_back(var1);
+				retorno.push_back((*var1));
 			}
 		}
 		return retorno;
 	}
-
+	/*
 	std::list<Instruction *> InterseccaoConjuntos(std::list<Instruction *> l1, std::list<Instruction *> l2){
-		std::list<Instruction *> retorno;
-		for each (Instruction * var1 in l1)
-		{
-			bool teste = false;
-			for each (Instruction * var2 in l2)
-			{
-				if (var2->getValueID() == var1->getValueID()){
-					teste = true;
-				}
-			}
-			if (teste){
-				retorno.push_back(var1);
-			}
-		}
-		return retorno;
+	std::list<Instruction *> retorno;
+	for each (Instruction * var1 in l1)
+	{
+	bool teste = false;
+	for each (Instruction * var2 in l2)
+	{
+	if (var2->getValueID() == var1->getValueID()){
+	teste = true;
 	}
+	}
+	if (teste){
+	retorno.push_back(var1);
+	}
+	}
+	return retorno;
+	}*/
+
 
 	BasicBlockInfo * RetornaBasicBlockInfoPorBasicBlock(std::list<BasicBlockInfo> lista, BasicBlock *bb){
 		for (std::list<BasicBlockInfo>::iterator it = lista.begin(); it != lista.end(); ++it){
@@ -234,13 +217,28 @@ namespace {
 		return false;
 	}
 
-	bool TestaSeEstaNaLista(std::list<Use *> lista, Use* inst){
+	bool TestaSeEstaNaLista(std::list<Use *> lista, Instruction* inst){
 		for (std::list<Use *>::iterator it = lista.begin(); it != lista.end(); ++it){
-			if ((*it)->getUser()->getValueID() == inst->getUser()->getValueID()){
+			if ((*it)->getUser()->getValueID() == inst->getValueID()){
 				return true;
 			}
 		}
 		return false;
+	}
+
+	std::list<Use *> CalculaGenInstrucao(Instruction * inst){
+		std::list<Use *> retorno;
+		for (Instruction::op_iterator it = inst->op_begin(); it != inst->op_end(); ++it){
+			retorno.push_back(it);
+		}
+		return retorno;
+	}
+
+	Instruction * CalculaKill(Instruction * inst){
+		if (inst->getName() != ""){
+			return inst;
+		}
+		return NULL;
 	}
 
 	std::list<Use *> PreencheOutBlock(BasicBlockInfo bbinfo){
@@ -256,11 +254,14 @@ namespace {
 	void LivenessAnalysis(BasicBlockInfo bbinfo){
 		std::list<InstructionInfo> infoInstructions;
 		std::list<Use *> outBlock = PreencheOutBlock(bbinfo);
-		for (BasicBlock::reverse_iterator ri = bbinfo.bloco->rbegin; ri != bbinfo.bloco->rend(); ++ri){
+		for (BasicBlock::reverse_iterator ri = bbinfo.bloco->rbegin(); ri != bbinfo.bloco->rend(); ++ri){
 			std::list<Use *> genLocal = CalculaGenInstrucao(&*ri);
-			Use * killLocal = CalculaKill(&*ri);
-			std::list<Use *> killLocalList;
-			killLocalList.push_back(killLocal);
+			Instruction * killLocal = CalculaKill(&*ri);
+			std::list<Instruction *> killLocalList;
+			if (killLocal != NULL){
+
+				killLocalList.push_back(killLocal);
+			}
 			std::list<Use *> inLocal = FazerUniao(genLocal, SubtracaoConjunto(outBlock, killLocalList));
 			InstructionInfo temp;
 			temp.In = inLocal;
@@ -271,32 +272,35 @@ namespace {
 			outBlock = inLocal;
 		}
 
-		for each (InstructionInfo instr in infoInstructions)
+		for (std::list<InstructionInfo>::iterator instr = infoInstructions.begin(); instr != infoInstructions.end(); ++instr)
 		{
-			if (!TestaSeEstaNaLista(instr.Out, instr.kill)){
-				if (!instr.inst->mayHaveSideEffects()){
-					instr.inst->removeFromParent();
+			if (!TestaSeEstaNaLista((*instr).Out, (*instr).kill)){
+				if (!(*instr).inst->mayHaveSideEffects()){
+					(*instr).inst->removeFromParent();
 				}
 			}
 		}
 	}
 
-	std::list<Use *> CalculaGenInstrucao(Instruction * inst){
-		std::list<Use *> retorno;
-		for (Instruction::op_iterator it = inst->op_begin(); it != inst->op_end(); ++it){
-			retorno.push_back(it);
-		}
-		return retorno;
-	}
 
-	Use * CalculaKill(Instruction * inst){
-		Use * retorno = dyn_cast<Use>(&inst);
-		if (inst->getName() != ""){
-			return retorno;
+	struct DCE : public FunctionPass {
+		static char ID;
+		DCE() : FunctionPass(ID) {}
+
+		virtual bool runOnFunction(Function &F) {
+			std::list<BasicBlockInfo> listaGlobalBB;
+			errs() << "Hello: ";
+			errs() << F.getName() << '\n';
+			computeBBGenKill(F, listaGlobalBB);
+			ComputeInOut(listaGlobalBB);
+			for (std::list<BasicBlockInfo>::iterator bb = listaGlobalBB.begin(); bb != listaGlobalBB.end(); ++bb)
+			{
+				LivenessAnalysis((*bb));
+			}
+			return false;
 		}
-		return NULL;
-	}
+	};
 }
 
-char Hello::ID = 0;
-static RegisterPass<Hello> X("hello", "Hello World Pass", false, false);
+char DCE::ID = 0;
+static RegisterPass<DCE> X("DCE", "Dead Code Elimination", false, false);
