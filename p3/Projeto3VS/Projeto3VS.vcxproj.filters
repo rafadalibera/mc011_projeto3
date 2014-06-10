@@ -18,7 +18,7 @@
     <ClCompile Include="..\printCGF.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Hello.cpp">
+    <ClCompile Include="..\dce.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

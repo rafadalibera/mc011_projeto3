@@ -288,19 +288,22 @@ namespace {
 		DCE() : FunctionPass(ID) {}
 
 		virtual bool runOnFunction(Function &F) {
+			errs() << "Iniciando...";
 			std::list<BasicBlockInfo> listaGlobalBB;
 			errs() << "Hello: ";
 			errs() << F.getName() << '\n';
 			computeBBGenKill(F, listaGlobalBB);
 			ComputeInOut(listaGlobalBB);
+			bool ret = false;
 			for (std::list<BasicBlockInfo>::iterator bb = listaGlobalBB.begin(); bb != listaGlobalBB.end(); ++bb)
 			{
 				LivenessAnalysis((*bb));
+				ret = true;
 			}
-			return false;
+			return ret;
 		}
 	};
 }
 
 char DCE::ID = 0;
-static RegisterPass<DCE> X("DCE", "Dead Code Elimination", false, false);
+static RegisterPass<DCE> X("DCE", "DeadCodeElimination", false, false);

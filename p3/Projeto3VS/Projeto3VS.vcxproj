@@ -66,7 +66,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Hello.cpp" />
+    <ClCompile Include="..\dce.cpp" />
     <ClCompile Include="..\printCGF.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
