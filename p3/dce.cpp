@@ -74,19 +74,19 @@ namespace {
 				if (!(*i).getName().empty()){
 					s.kill.insert(&*i);
 					bb.kill.push_back(&*i);
-					errs() << "nome: " << (*i).getName();
+					//errs() << "nome: " << (*i).getName();
 				}
 				else{
 				}
 			}
-			errs() << "outGen: " << bb.gen.size() << "\n";
+		//	errs() << "outGen: " << bb.gen.size() << "\n";
 			basicBlocksList.push_back(bb);
 		}
 	}
 
 	std::list<Instruction *> FazerUniao(std::list<Instruction *> l1, std::list<Instruction *> l2){
-		errs() << "l1Uniao: " << l1.size() << "\n";
-		errs() << "l2Uniao: " << l2.size() << "\n";
+	//	errs() << "l1Uniao: " << l1.size() << "\n";
+	//	errs() << "l2Uniao: " << l2.size() << "\n";
 		
 		std::list<Instruction *> retorno;
 		for (std::list<Instruction *>::iterator del1 = l1.begin(); del1 != l1.end(); ++del1)
@@ -112,10 +112,10 @@ namespace {
 	std::list<Use *> FazerUniao(std::list<Use *> l1, std::list<Use *> l2){
 		std::list<Use *> retorno;
 		if (l1.empty()){
-			errs() << "Lista 1 vazia\n";
+		//	errs() << "Lista 1 vazia\n";
 		}
 		if (l2.empty()){
-			errs() << "Lista 2 vazia\n";
+	//		errs() << "Lista 2 vazia\n";
 		}
 		for (std::list<Use *>::iterator del1 = l1.begin(); del1 != l1.end(); ++del1)
 		{
@@ -191,36 +191,44 @@ namespace {
 			for (std::list<BasicBlockInfo>::reverse_iterator ret = bbInfoList.rbegin(); ret != bbInfoList.rend(); ++ret)
 			{
 				std::list<Instruction *> uniao;
+				int count = 0;
 				for (succ_iterator suc = succ_begin(ret->bloco), E = succ_end(ret->bloco); suc != E; ++suc){
 					uniao = FazerUniao(uniao, RetornaBasicBlockInfoPorBasicBlock(bbInfoList, *suc)->in);
+					count++;
 				}
+				
+				errs() << "qtdeSucessores:" << count << "\n";
+
 				ret->out = uniao;
 
 				std::list<Instruction *> novoIn;
 				novoIn = FazerUniao(ret->gen, SubtracaoConjunto(ret->out, ret->kill));
-				errs() << "quantidadeIn: " << novoIn.size() << "\n";
-				errs() << "quantidadeRetGen: " << ret->gen.size() << "\n";
-				errs() << "quantidadeKill: " << ret->kill.size() << "\n";
-				errs() << "ImprimeOut\n";
-				errs() << "quantidadeOut: " << ret->out.size() << "\n";
+			//	errs() << "quantidadeIn: " << novoIn.size() << "\n";
+		//		errs() << "quantidadeRetGen: " << ret->gen.size() << "\n";
+			//	errs() << "quantidadeKill: " << ret->kill.size() << "\n";
+		//		errs() << "ImprimeOut\n";
+		//		errs() << "quantidadeOut: " << ret->out.size() << "\n";
 				if (novoIn.size() != ret->in.size()){
 					rodar = true;
 				}
 				ret->in = novoIn;
 			}
-			errs() << "novohile\n";
+			//errs() << "novohile\n";
 		} while (rodar);
 	}
 
 	bool TestaSeEstaNaLista(std::list<Instruction *> lista, Instruction* inst){
 		//errs() << "Testando presenca na lista instruction * instruction *\n";
+		if (inst == NULL){
+			return true;
+		}
 		for (std::list<Instruction *>::iterator it = lista.begin(); it != lista.end(); ++it){
 			if ((*it)->getValueID() == inst->getValueID()){
-		//		errs() << "Fim teste presenca lista instruction * instruction * - success\n";
+				//errs() << "Fim teste presenca lista instruction * instruction * - success\n";
 				return true;
 			}
 		}
-	//	errs() << "Testando presenca na lista instruction * instruction *\n";
+		//errs() << "Fim teste presenca na lista instruction * instruction *\n";
 		return false;
 	}
 
@@ -259,7 +267,7 @@ namespace {
 			Value *v = inst->getOperand(j);
 			if (isa<Instruction>(v)) {
 				Instruction *op = cast<Instruction>(v);
-				errs() << "Instrucao: " << op->getName() << "\n";
+			//	errs() << "Instrucao: " << op->getName() << "\n";
 				retorno.push_back(op);
 			}
 		}
@@ -281,7 +289,7 @@ namespace {
 				Value *v = (*it)->getOperand(j);
 				if (isa<Instruction>(v)) {
 					Instruction *op = cast<Instruction>(v);
-					errs() << "InstrucaoPreencheOutBlock: " << op->getName() << "\n";
+				//	errs() << "InstrucaoPreencheOutBlock: " << op->getName() << "\n";
 					retorno.push_back(op);
 				}
 			}
@@ -291,34 +299,34 @@ namespace {
 
 	void LivenessAnalysis(BasicBlockInfo bbinfo){
 		std::list<InstructionInfo> infoInstructions;
-		errs() << "Preenchendo outBlock\n";
+	//	errs() << "Preenchendo outBlock\n";
 		std::list<Instruction *> outBlock = PreencheOutBlock(bbinfo);
-		errs() << "Outblock preenchido:" << outBlock.size() << "\n";
+	//	errs() << "Outblock preenchido:" << outBlock.size() << "\n";
 		for (BasicBlock::reverse_iterator ri = bbinfo.bloco->rbegin(); ri != bbinfo.bloco->rend(); ++ri){
-			errs() << "Iniciando calculo Gen Instrucao:" << ri->getName() << "\n";
+	//		errs() << "Iniciando calculo Gen Instrucao:" << ri->getName() << "\n";
 			std::list<Instruction *> genLocal = CalculaGenInstrucao(&*ri);
-			errs() << "Termino calculo Gen instrucao:" << genLocal.size() << "\n";
+	//		errs() << "Termino calculo Gen instrucao:" << genLocal.size() << "\n";
 			Instruction * killLocal = CalculaKill(&*ri);
 			std::list<Instruction *> killLocalList;
 			if (killLocal != NULL){
 
 				killLocalList.push_back(killLocal);
 			}
-			errs() << "Kills:" << killLocalList.size() << "\n";
+		//	errs() << "Kills:" << killLocalList.size() << "\n";
 
 			std::list<Instruction *> inLocal = FazerUniao(genLocal, SubtracaoConjunto(outBlock, killLocalList));
 			InstructionInfo temp;
 			temp.In = inLocal;
-			errs() << "In: " << temp.In.size() << "\n";
+		//	errs() << "In: " << temp.In.size() << "\n";
 			temp.Out = outBlock;
-			errs() << "Out: " << temp.Out.size() << "\n";
+		//	errs() << "Out: " << temp.Out.size() << "\n";
 			temp.inst = &*ri;
 			temp.kill = killLocal;
 			infoInstructions.push_back(temp);
 			outBlock = inLocal;
 		}
 
-		//errs() << "Inicio analise lista\n";
+	//	errs() << "Inicio analise lista\n";
 		bool t = true;
 		for (std::list<InstructionInfo>::iterator instr = infoInstructions.begin(); instr != infoInstructions.end(); ++instr)
 		{
@@ -327,6 +335,7 @@ namespace {
 			}
 			else{
 				if (!TestaSeEstaNaLista((*instr).Out, (*instr).kill)){
+					errs() << "InstrucaoTestaLista:" << (*instr).inst->getName() << "\n";
 					if (!(*instr).inst->mayHaveSideEffects()){
 						errs() << "Removeu " << (*instr).inst->getName() << "\n";
 						(*instr).inst->removeFromParent();
@@ -334,7 +343,7 @@ namespace {
 				}
 			}
 		}
-		//errs() << "Termino analise lista\n";
+	//	errs() << "Termino analise lista\n";
 	}
 
 
@@ -350,7 +359,7 @@ namespace {
 			computeBBGenKill(F, listaGlobalBB);
 			errs() << "Computando funcao " << F.getName() << "\n";
 			ComputeInOut(listaGlobalBB);
-			
+			errs() << "Fim calculo inout\n";
 			bool ret = false;
 			for (std::list<BasicBlockInfo>::iterator bb = listaGlobalBB.begin(); bb != listaGlobalBB.end(); ++bb)
 			{
