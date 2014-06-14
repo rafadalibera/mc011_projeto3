@@ -475,13 +475,13 @@ namespace {
 	struct DCE : public FunctionPass {
 		static char ID;
 		DCE() : FunctionPass(ID) {}
-
+		
 		virtual bool runOnFunction(Function &F) {
-			errs() << "Iniciando...\n";
+			
 			std::list<BasicBlockInfo> listaGlobalBBtemp;
 			std::list<BasicBlockInfo> listaGlobalBB;
-			errs() << "Hello2.0: ";
-			errs() << "-------> " << F.getName() << '\n';
+			//errs() << "Hello2.0: ";
+			//errs() << "-------> " << F.getName() << '\n';
 			computeBBGenKill(F, listaGlobalBB);
 			errs() << "Computando funcao " << F.getName() << "\n";
 /*
@@ -493,7 +493,7 @@ namespace {
 
 			listaGlobalBB = ComputeInOut(listaGlobalBB);
 			
-			errs() << "Fim calculo inout\n";
+			//errs() << "Fim calculo inout\n";
 			/*
 			for (std::list<BasicBlockInfo>::iterator bb = listaGlobalBB.begin(); bb != listaGlobalBB.end(); ++bb) {
 				errs() << "-------------------------\n";
@@ -510,9 +510,9 @@ namespace {
 			bool ret = false;
 			for (std::list<BasicBlockInfo>::iterator bb = listaGlobalBB.begin(); bb != listaGlobalBB.end(); ++bb)
 			{
-				errs() << "Entrando Passo Liveness\n";
+				//errs() << "Entrando Passo Liveness\n";
 				LivenessAnalysis((*bb));
-				errs() << "Terminado passo Liveness\n";
+				//errs() << "Terminado passo Liveness\n";
 				ret = true;
 			}
 			return ret;
