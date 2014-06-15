@@ -61,11 +61,7 @@ namespace {
 			bb.bloco = &*b;
 
 			for (BasicBlock::iterator i = b->begin(), e = b->end(); i != e; ++i) {
-				// The GEN set is the set of upwards-exposed uses:
-				// pseudo-registers that are used in the block before being
-				// defined. (Those will be the pseudo-registers that are defined
-				// in other blocks, or are defined in the current block and used
-				// in a phi function at the start of this block.) 
+
 				unsigned n = i->getNumOperands();
 				for (unsigned j = 0; j < n; j++) {
 					Value *v = i->getOperand(j);
@@ -79,15 +75,10 @@ namespace {
 						}
 					}
 				}
-				// For the KILL set, you can use the set of all instructions
-				// that are in the block (which safely includes all of the
-				// pseudo-registers assigned to in the block).
+
 				if (!(*i).getName().empty()){
 					s.kill.insert(&*i);
 					bb.kill.push_back(&*i);
-					//errs() << "nome: " << (*i).getName();
-				}
-				else{
 				}
 			}
 		//	errs() << "outGen: " << bb.gen.size() << "\n";
@@ -144,35 +135,7 @@ namespace {
 		*/
 		return retorno;
 	}
-/*
-	std::list<Use *> FazerUniao(std::list<Use *> l1, std::list<Use *> l2){
-		std::list<Use *> retorno;
-		if (l1.empty()){
-		//	errs() << "Lista 1 vazia\n";
-		}
-		if (l2.empty()){
-	//		errs() << "Lista 2 vazia\n";
-		}
-		for (std::list<Use *>::iterator del1 = l1.begin(); del1 != l1.end(); ++del1)
-		{
-			bool teste = false;
-			for (std::list<Use *>::iterator del2 = l2.begin(); del2 != l2.end(); ++del2)
-			{
-				if ((*del2)->getUser()->getValueID() == (*del1)->getUser()->getValueID()){
-					teste = true;
-				}
-			}
-			if (!teste){
-				retorno.push_back((*del1));
-			}
-		}
-		for (std::list<Use *>::iterator del2 = l2.begin(); del2 != l2.end(); ++del2)
-		{
-			retorno.push_back((*del2));
-		}
-		return retorno;
-	}
-*/
+
 	std::list<Instruction *> SubtracaoConjunto(std::list<Instruction *> out, std::list<Instruction *>kill){
 		std::list<Instruction *> retorno;
 		/*
@@ -201,25 +164,6 @@ namespace {
 		*/
 		return retorno;
 	}
-	/*
-	std::list<Instruction *> InterseccaoConjuntos(std::list<Instruction *> l1, std::list<Instruction *> l2){
-	std::list<Instruction *> retorno;
-	for each (Instruction * var1 in l1)
-	{
-	bool teste = false;
-	for each (Instruction * var2 in l2)
-	{
-	if (var2->getValueID() == var1->getValueID()){
-	teste = true;
-	}
-	}
-	if (teste){
-	retorno.push_back(var1);
-	}
-	}
-	return retorno;
-	}*/
-
 
 	BasicBlockInfo * RetornaBasicBlockInfoPorBasicBlock(std::list<BasicBlockInfo> lista, BasicBlock *bb){
 		for (std::list<BasicBlockInfo>::iterator it = lista.begin(); it != lista.end(); ++it){
@@ -242,6 +186,7 @@ namespace {
 		bool saida = true;
 		do{
 			//errs() << "------------------------------------------------- passo InOut\n";
+			//errs() << bbInfoList.size() << "\n";
 			//sleep(8);
 
 			rodar = false;
@@ -349,36 +294,9 @@ namespace {
 		//errs() << "Fim teste presenca na lista instruction * instruction *\n";
 		return false;
 	}
-/*
-	bool TestaSeEstaNaLista(std::list<Use *> lista, Instruction* inst){
-		//errs() << "Testando presenca na lista use * instruction *\n";
-		for (std::list<Use *>::iterator it = lista.begin(); it != lista.end(); ++it){
-			//errs() << "Executando for\n";
-			if ((*it) != NULL && inst != NULL){
-				if ((*it)->getUser()->getValueID() == inst->getValueID()){
-			//		errs() << "Fim teste presenca lista use * instruction * - success\n";
-					return true;
-				}
-			}
-			else{
-		//		errs() << "Deu NULL\n";
-			}
-		//	errs() << "Terminando for\n";
-		}
-		//errs() << "Fim teste presenca lista use * instruction *\n";
-		return false;
-	}
-*/
+
 	std::list<Instruction *> CalculaGenInstrucao(Instruction * inst){
 		std::list<Instruction *> retorno;
-		/*for (Instruction::op_iterator it = inst->op_begin(); it != inst->op_end(); ++it){
-				retorno.push_back(it);
-				errs() << "Gen: " << it->getUser()->getName() << "\n";
-		}*/
-
-		/*if (!inst->getName().empty()){
-			errs() << "Instrucao calculagenkill: " << inst->getName() << " " << inst->getOperand(1)->getName() << "\n";
-		}*/
 
 		unsigned n = inst->getNumOperands();
 		for (unsigned j = 0; j < n; j++) {
@@ -452,21 +370,33 @@ namespace {
 		}
 
 	//	errs() << "Inicio analise lista\n";
-		bool t = true;
+		//bool t = true;
 		for (std::list<InstructionInfo>::iterator instr = infoInstructions.begin(); instr != infoInstructions.end(); ++instr)
 		{
-			if (t){
-				t = false;
-			}
-			else{
+		//	if (t){
+		//		t = false;
+		//	}
+		//	else{errs() << "quantidadeIn: " << ret->in.size() << "\n";
+					//errs() << "-------------------------------\n";
+					//errs() << "In: ";
+					//PrintInst((*instr).In);
+					//errs() << "Gen: ";
+					//PrintInst((*instr).gen);
+				    if ((*instr).kill != NULL) {
+				    	//errs() << "Kill: " << (*instr).kill->getName() << "\n";
+				    } else {
+				    	//errs() << "Kill: \n";
+				    }
+					//errs() << "Out: ";
+					//PrintInst((*instr).Out);
 				if (!TestaSeEstaNaLista((*instr).Out, (*instr).kill)){
 					//errs() << "InstrucaoTestaLista:" << (*instr).inst->getName() << "\n";
 					if (!(*instr).inst->mayHaveSideEffects()){
-						errs() << "Removeu " << (*instr).inst->getName() << "\n";
-						(*instr).inst->removeFromParent();
+						errs() << "Removeu " << (*instr).inst->getName() << "<--------------------------------------------------- \n";
+						(*instr).inst->eraseFromParent();
 					}
 				}
-			}
+		//	}
 		}
 	//	errs() << "Termino analise lista\n";
 	}
@@ -475,38 +405,18 @@ namespace {
 	struct DCE : public FunctionPass {
 		static char ID;
 		DCE() : FunctionPass(ID) {}
-		
+
 		virtual bool runOnFunction(Function &F) {
 			
-			std::list<BasicBlockInfo> listaGlobalBBtemp;
 			std::list<BasicBlockInfo> listaGlobalBB;
 			//errs() << "Hello2.0: ";
 			//errs() << "-------> " << F.getName() << '\n';
 			computeBBGenKill(F, listaGlobalBB);
 			errs() << "Computando funcao " << F.getName() << "\n";
-/*
-
-			for (std::list<BasicBlockInfo>::reverse_iterator bb = listaGlobalBBtemp.rbegin(); bb != listaGlobalBBtemp.rend(); ++bb) {
-				listaGlobalBB.push_back((*bb));
-			}
-*/
 
 			listaGlobalBB = ComputeInOut(listaGlobalBB);
 			
-			//errs() << "Fim calculo inout\n";
-			/*
-			for (std::list<BasicBlockInfo>::iterator bb = listaGlobalBB.begin(); bb != listaGlobalBB.end(); ++bb) {
-				errs() << "-------------------------\n";
-				errs() << "kill: ";
-				PrintInst((*bb).kill);
-				errs() << "gen: ";
-				PrintInst((*bb).gen);
-				errs() << "in: ";
-				PrintInst((*bb).in);
-				errs() << "out: ";
-				PrintInst((*bb).out);
-			}
-			*/
+			//errs() << listaGlobalBB.size() << "\n";
 			bool ret = false;
 			for (std::list<BasicBlockInfo>::iterator bb = listaGlobalBB.begin(); bb != listaGlobalBB.end(); ++bb)
 			{
